@@ -28,21 +28,25 @@ let plane = createGroundPlaneXZ(20, 20)
 scene.add(plane);
 
 // create a cube
+material = setDefaultMaterial("green");
 let cubeGeometry = new THREE.BoxGeometry(4, 4, 4);
 let cube = new THREE.Mesh(cubeGeometry, material);
 // position the cube
 cube.position.set(0.0, 2.0, 0.0);
 // add the cube to the scene
+scene.add(cube); 
+
+
+material = setDefaultMaterial("orange");
+cubeGeometry = new THREE.CylinderGeometry(2, 2, 4);
+cube = new THREE.Mesh(cubeGeometry, material);
+cube.position.set(-5.0, 2.0, 0.0);
 scene.add(cube);
 
-cubeGeometry = new THREE.BoxGeometry(2, 2, 2);
+material = setDefaultMaterial("gray");
+cubeGeometry = new THREE.SphereGeometry(2);
 cube = new THREE.Mesh(cubeGeometry, material);
-cube.position.set(-4.0, 1.0, 4.0);
-scene.add(cube);
-
-cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
-cube = new THREE.Mesh(cubeGeometry, material);
-cube.position.set(8.0, 0.5, 0.0);
+cube.position.set(5.0, 2.0, 0.0);
 scene.add(cube);
 
 // Use this to show information onscreen
